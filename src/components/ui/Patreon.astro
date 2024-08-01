@@ -10,10 +10,10 @@ const {nombre, img, link, alt} = Astro.props
                 img? 
                 <img src="img" alt="">
                 :
-                <img src="../../../public/assets/img/Nuevo Logo Jemmy-02.png" alt={alt}>
+                <img src="assets/img/Nuevo Logo Jemmy-02.png" alt={alt}>
             }
         </div>
-        <p class="text-transparent transition-all translate-y-5 group-hover:translate-y-0 group-hover:text-gray-950">{nombre}</p>
+        <a href="/" class="text-transparent transition-all translate-y-5 group-hover:translate-y-0 group-hover:text-gray-950">{nombre}</a>
     </div>
 
 </div>
