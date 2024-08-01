@@ -1,0 +1,19 @@
+---
+const {nombre, img} = Astro.props
+
+
+---
+<div class="w-full aspect-square md:w-1/2">
+    <div class="p-2 relative aspect-square w-full">
+        {img?
+        <img src="/" class="absolute"/>
+        :
+        <div class="aspect-square bg-gray-300 w-full"></div>
+        }
+        <div class="description absolute bottom-4 left-4">
+            <h3 class="font-bold text-lg md:text-2xl">{nombre? nombre :'Nombre'}</h3>
+            <p class="italic text-sm text-gray-600">cargo</p>
+        </div>
+    </div>
+</div>
+

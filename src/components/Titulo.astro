@@ -1,0 +1,10 @@
+---
+const {name,align} = Astro.props
+---
+
+<h2 class:list={['text-2xl mt-3 mb-4',
+    {
+        "text-center":align == "center",
+        "text-right":align == "right",
+    },
+    ]}>{name}</h2>

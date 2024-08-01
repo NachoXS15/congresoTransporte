@@ -1,19 +1,36 @@
 ---
-import { BtnPrimary } from "../components/ui/buttons"
 import Header from '../components/Header.astro'
+import Banner from "../components/Banner.astro"
+import Staff from "../components/Staff.astro"
+import News from '../components/News.astro'
+import Patreons from '../components/Patreons.astro'
+import Inscripcion from '../components/Inscripcion.astro'
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+        <script src="https://kit.fontawesome.com/9d84b18605.js" crossorigin="anonymous" is:inline></script>
 	</head>
 	<body>
 		<Header />
-		<h1>Astro</h1>
-		<BtnPrimary />
+        <Banner />
+        <main>
+            <Staff />
+            <News />
+            <Patreons />
+            <Inscripcion />
+        </main>
+
 	</body>
 </html>
+
+<style is:global>
+    .btn{
+        @apply px-2 py-2 inline-block bg-gray-400 font-bold hover:bg-gray-800 hover:text-white
+    }
+</style>

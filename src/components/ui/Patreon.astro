@@ -1,0 +1,19 @@
+---
+const {nombre, img, link, alt} = Astro.props
+
+
+---
+<div>
+    <div class="aspect-square w-36 md:w-32 bg-slate-400 rounded-full group grid place-content-center relative overflow-hidden">
+        <div class="absolute w-full h-full z-0 group-hover:opacity-15">
+            {
+                img? 
+                <img src="img" alt="">
+                :
+                <img src="../../../public/assets/img/Nuevo Logo Jemmy-02.png" alt={alt}>
+            }
+        </div>
+        <p class="text-transparent transition-all translate-y-5 group-hover:translate-y-0 group-hover:text-gray-950">{nombre}</p>
+    </div>
+
+</div>
