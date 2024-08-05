@@ -1,26 +1,42 @@
 ---
+
 ---
 <header class="w-full bg-gray-300">
     <div class="w-full mx-auto sm:container">
-        <div class="w-100 px-3 sm:px-5 py-5 flex justify-between items-center">
+        <div class="w-100 px-3 sm:px-5 py-5 flex flex-col md:flex-row justify-between items-center">
             <h1 class="text-5xl font-bold sm:text-2xl"><a href="#" title="Volver a inicio">Logo</a></h1>
-            <!-- <span class="circle"></span> -->
+            <nav class="w-full mt-3 px-5 flex flex-col sm:flex-row justify-start md:justify-end bg-red-100">
+                <div class="md:hidden text-center">
+                    <button id="menu-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+                <div id="menu" class="w-full md:w-2/3 flex flex-col md:flex-row md:justify-end bg-red-400">
+                    <a href="/transporte" class="nav-links">Inicio</a>
+                    <a href="/transporte" class="nav-links">Staff</a>
+                    <a href="/transporte" class="nav-links">Novedades</a>
+                    <a href="/transporte" class="nav-links">Galería</a>
+                    <a href="/transporte" class="nav-links">Programa</a>
+                    <a href="/transporte" class="nav-links">Contacto</a>
+                </div>
+            </nav>
         </div>
 
-        <nav class="w-100 px-5 flex flex-col sm:flex-row justify-center">
-            <div class="hidden">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <a href="/transporte" class="nav-links">Inicio</a>
-            <a href="/transporte" class="nav-links">Staff</a>
-            <a href="/transporte" class="nav-links">Novedades</a>
-            <a href="/transporte" class="nav-links">Galería</a>
-            <a href="/transporte" class="nav-links">Programa</a>
-            <a href="/transporte" class="nav-links">Contacto</a>
-        </nav>
     </div>
 </header>
+<script>
+    let boton = document.querySelector('#menu-btn'),
+    menu = document.querySelector('#menu')
 
+    boton.addEventListener('click', ()=>{
+        menu.classList.toggle('hidden');
+    })
+    window.addEventListener('resize', function(event) {
+        if(this.window.innerWidth > 767 && menu.classList.contains('hidden')){
+            menu.classList.remove('hidden')
+        }
+    }, true);
+</script>
 
 <style>
     .nav-links{
