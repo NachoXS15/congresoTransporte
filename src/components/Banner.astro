@@ -1,6 +1,6 @@
 ---
 ---
-<div id="banner" class="w-full bg-gray-500 h-screen sm:h-80 overflow-hidden">
+<div id="banner" class="w-full bg-gray-500 dark:bg-gray-700 h-[60dvh] sm:h-80 overflow-hidden">
     <div class="w-full mx-auto sm:container px-5 py-6 sm:px-0 h-full flex flex-col justify-end">
         <h2 class="text-4xl">1er <br> Congreso <br> Federal <br> Argentino <br> de Transporte</h2>
         <span>Desde hasta</span>
@@ -9,6 +9,15 @@
 
 <style>
     #banner{
-        
+        background-image: url('assets/img/1920_600.png');
+        background-position-x: 80%;
+        background-position-y: center;
+        background-repeat: no-repeat;
+    }
+    @media (min-width: 640px) {
+        #banner{
+            background-position-x: left;
+            background-position-y: top;
+        }
     }
 </style>

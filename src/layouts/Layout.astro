@@ -1,0 +1,40 @@
+---
+interface Props {
+	title: string;
+}
+import Header from '../components/Header.astro'
+import Banner from "../components/Banner.astro"
+import Footer from "../components/Footer.astro"
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Congreso de transporte 2024</title>
+        <script src="https://kit.fontawesome.com/9d84b18605.js" crossorigin="anonymous" is:inline></script>
+	</head>
+	<body class="dark:bg-gray-500 dark:text-white">
+        <Header/>
+        <Banner/>
+        <main class="">
+            <slot />
+        </main>
+        <Footer />
+	</body>
+</html>
+
+<style is:global>
+    .btn{
+        @apply px-2 py-2 inline-block bg-gray-400 font-bold hover:bg-gray-800 hover:text-white
+    }
+    :root{
+        --color1:#627791;
+        --color2:#2f455c;
+        --color3:#3d5a7a;
+        --color4:#1dcdfe;
+    }
+</style>

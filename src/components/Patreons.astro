@@ -2,15 +2,50 @@
 import Titulo from "./ui/Titulo.astro";
 import Patreon from "../components/ui/Patreon.astro"
 ---
-<section id="patreons" class="w-full bg-gray-500 dark:bg-gray-950 md:min-h-64 sm:h-80">
-    <div class="w-full sm:container mx-auto px-5 py-8 sm:px-0 h-full">
+<section id="patreons" class="w-full bg-gray-500 dark:bg-gray-800 md:min-h-64 sm:h-80">
+    <div class="w-full md:container mx-auto px-5 py-8 sm:px-0 h-full ">
         <Titulo name="Nuestros patrocinadores"/>
-        <div id="carrusel" class="flex gap-2">
-            <Patreon nombre="sponsor" alt="Lucas"/>
-            <Patreon nombre="sponsor" alt="Lucas"/>
-            <Patreon nombre="sponsor" alt="Lucas"/>
-            <Patreon nombre="sponsor" alt="Lucas"/>
+        <div class="overflow-hidden flex gap-1">
+            <div class="carrusel flex gap-2 ">
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+                <Patreon nombre="sponsor" alt="Lucas"/>
+            </div>
         </div>
         <h3 class="text-gray-800">Información requerida: sponsors y demas</h3>
     </div>
 </section>
+
+
+<style is:inline>
+    /* @keyframes slide {
+        from{
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(-100%);
+        }
+    }
+    .carrusel{
+        animation: 15s slide infinite linear;
+    }
+    .carrusel:hover{
+        animation-play-state: paused;
+    } */
+</style>
