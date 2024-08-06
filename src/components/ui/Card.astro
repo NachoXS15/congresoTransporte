@@ -9,7 +9,7 @@ const {nombre, img, rol, extra} = Astro.props
         <div class="aspect-square bg-gray-300 w-full"></div>
         }
         <div class="description absolute bottom-4 left-4">
-            <h3 class="font-bold text-lg md:text-2xl">{nombre? nombre :'Nombre'}</h3>
+            <h3 class="font-bold text-lg md:text-2xl text-gray-900">{nombre? nombre :'Nombre'}</h3>
             <p class="italic text-sm text-gray-600">{rol} - {extra? extra: ''}</p>
         </div>
     </div>
