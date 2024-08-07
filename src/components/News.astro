@@ -20,15 +20,7 @@ const news = newsSnapShot.docs.map((doc) => ({
         {
             news && news.length > 0 ? (
                 news.map((noticia) => (
-                    <div class="noticia w-full sm:w-1/2 flex p-4">
-                        <div class="w-full p-4 bg-gray-300 text-gray-950">
-                            <h3 class="font-bold text-2xl">{noticia.title}</h3>
-                            <p class="my-3">{noticia.desc}</p>
-                            <a href="/" class="btn">
-                                Leer más
-                            </a>
-                        </div>
-                    </div>
+                    <Newscard title={noticia.title} desc={noticia.desc}/>
                 ))
             ) : (
                 <Loader />

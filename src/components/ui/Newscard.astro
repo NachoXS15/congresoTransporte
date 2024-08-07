@@ -1,10 +1,13 @@
 ---
+const {title,desc} = Astro.props
 ---
 
 <div class="noticia w-full sm:w-1/2 flex p-4">
-    <div class="p-4 bg-gray-300 text-gray-950">
-        <h3 class="font-bold text-2xl">Titular</h3>
-        <p class="my-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur animi possimus molestiae officiis commodi sunt, inventore asperiores, quis explicabo totam, placeat consectetur tenetur quasi voluptates iste repellat natus? Sed, perferendis.</p>
-        <a href="/" class="btn">Leer más</a>
+    <div class="w-full p-4 bg-gray-300 text-gray-950">
+        <h3 class="font-bold text-2xl">{title}</h3>
+        <p class="my-3">{desc}</p>
+        <a href="/" class="btn">
+            Leer más
+        </a>
     </div>
 </div>
