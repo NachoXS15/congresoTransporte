@@ -1,12 +1,17 @@
 import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "mi-clave-publica-de-la-api",
-  authDomain: "mi-dominio-autentificado",
-  projectId: "el-id-de-mi-proyecto",
-  storageBucket: "mi-bucket-de-almacenamiento",
-  messagingSenderId: "el-id-de-mi-emisor",
-  appId: "el-id-de-mi-app",
+  apiKey: import.meta.env.ASTRO_FIREBASE_API_KEY,
+  authDomain: import.meta.env.ASTRO_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.ASTRO_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.ASTRO_FIREBASE_STORGAE_BUCKET,
+  messagingSenderId: import.meta.env.ASTRO_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.ASTRO_FIREBASE_APP_ID,
+  measurementId: import.meta.env.ASTRO_FIREBASE_MEASURAMENT_ID
 };
 
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+export {app, analytics}
