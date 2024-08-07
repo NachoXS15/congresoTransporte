@@ -1,14 +1,40 @@
 ---
 import Titulo from "./ui/Titulo.astro";
 import Newscard from "./ui/Newscard.astro";
+import { app } from "../config/server";
+import type NewsProps from "../config/NewsType";
+import { getFirestore } from "firebase-admin/firestore";
+import Loader from "../components/ui/Loader.astro";
+const db = getFirestore(app);
+const newsRef = db.collection("news");
+const newsSnapShot = await newsRef.get();
+const news = newsSnapShot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+})) as NewsProps[];
 ---
-<section id="Noticias"class="w-full mx-auto px-5 py-8 sm:container min-h-32">
-    <Titulo name="Novedades"/>
+
+<section id="Noticias" class="w-full mx-auto px-5 py-8 sm:container min-h-32">
+    <Titulo name="Novedades" />
     <div id="noticias-cards" class="flex flex-wrap">
-        <Newscard/>
-        <Newscard/>
-        <Newscard/>
-        <Newscard/>
-        <a href="/" class="btn inline-block mx-auto dark:text-gray-800">Mas noticias</a>
+        {
+            news && news.length > 0 ? (
+                news.map((noticia) => (
+                    <div class="noticia w-full sm:w-1/2 flex p-4">
+                        <div class="w-full p-4 bg-gray-300 text-gray-950">
+                            <h3 class="font-bold text-2xl">{noticia.title}</h3>
+                            <p class="my-3">{noticia.desc}</p>
+                            <a href="/" class="btn">
+                                Leer más
+                            </a>
+                        </div>
+                    </div>
+                ))
+            ) : (
+                <Loader />
+            )
+        }
+
+        <a href="/" class="btn inline-block mx-auto">Mas noticias</a>
     </div>
 </section>
