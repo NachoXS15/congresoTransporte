@@ -1,31 +1,19 @@
 ---
 import Titulo from "./ui/Titulo.astro";
 import Patreon from "../components/ui/Patreon.astro"
+import { sponsors } from "../ts/data";
 ---
 <section id="patreons" class="w-full bg-gray-500 dark:bg-gray-800 md:min-h-64 sm:h-80">
     <div class="w-full md:container mx-auto px-5 py-8 sm:px-0 h-full ">
         <Titulo name="Nuestros patrocinadores" color="white"/>
         <div class="overflow-hidden flex gap-1">
             <div class="carrusel flex gap-2 ">
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
-                <Patreon nombre="sponsor" alt="Lucas"/>
+                {
+                sponsors.map((sponsor) => (
+                    <Patreon nombre={sponsor.nombre} link={sponsor.url} alt="Lucas" img={sponsor.img}/>
+                ))
+                }
+
             </div>
         </div>
         <h3 class="text-gray-800">Información requerida: sponsors y demas</h3>

@@ -5,6 +5,12 @@ interface members {
   extra?: string;
   img?: string;
 }
+interface sponsor {
+  id: number;
+  nombre: string;
+  url: string;
+  img?: string;
+}
 
 export const directivos: members[] = [
   {
@@ -24,5 +30,44 @@ export const directivos: members[] = [
     nombre: "Juan Ignacio Ciancaglini",
     rol: "Secretario",
     extra: "Provincia de Rio Negro",
+  },
+];
+
+export const sponsors: sponsor[] = [
+  {
+    id: 1,
+    nombre: "Mercedes-Benz",
+    url: "https://www.mercedes-benz.com.ar/",
+    img: "mercedes_logos.png",
+  },
+  {
+    id: 2,
+    nombre: "Bizland",
+    url: "https://www.bizland.tech/",
+    img: "bizland.png",
+  },
+  {
+    id: 3,
+    nombre: "Smod",
+    url: "https://bicicletas.smod.io/",
+    img: "smod.png",
+  },
+  {
+    id: 4,
+    nombre: "Marcopolo",
+    url: "https://www.marcopolo.com.br/es",
+    img: "marcopolo-logo.png",
+  },
+  {
+    id: 5,
+    nombre: "Red Bus",
+    url: "/",
+    img: "LogoRedBus.png",
+  },
+  {
+    id: 6,
+    nombre: "Buswagen",
+    url: "https://buswagen.com.ar/",
+    img: "buswagen_s_a_cover.jpg",
   },
 ];
