@@ -1,3 +1,5 @@
+# prepros
+prepros.config
 # build output
 dist/
 # generated types
