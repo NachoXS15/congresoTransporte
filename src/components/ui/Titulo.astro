@@ -1,11 +1,12 @@
 ---
-const {name,align} = Astro.props
+const {name,align, color} = Astro.props
 ---
 
 <h2 class:list={["text-2xl mt-3 ml-5 mb-4 relative inline-block ",
     {
         "text-center":align == "center",
         "text-right":align == "right",
+        "text-white": color == 'white',
     },
     ]}>{name}</h2>
 
