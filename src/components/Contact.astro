@@ -4,9 +4,9 @@ import Titulo from "./ui/Titulo.astro";
 <section id="contact" class="min-h-32 bg-gray-800">
     <div class="w-full mx-auto px-5 py-8 sm:container">
         <Titulo name="Contactanos" color="white"/>
-        <p>Podes ponerte en contacto con nosotros rellenando este formulario</p>
-        <div class="flex">
-            <form action="/" method="POST" class="text-white w-1/2">
+        <p class="light:text-white">Podes ponerte en contacto con nosotros rellenando este formulario</p>
+        <div class="flex flex-col md:flex-row">
+            <form action="/" method="POST" class="text-white w-full md:w-1/2">
                 <div class="form_control">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre">
@@ -23,7 +23,7 @@ import Titulo from "./ui/Titulo.astro";
                     <button type="submit" class="w-full btn">Enviar consulta</button>
                 </div>
             </form>
-            <div class="w-1/2 px-6">
+            <div class="w-full md:w-1/2 py-5 px-6">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3475.578805194178!2d-66.8613774248254!3d-29.41187517524823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9427dbb50132f3c7%3A0x34377a31479a2604!2sPaseo%20Cultural%20Pedro%20Ignacio%20de%20Castro%20cimpaa%20Barros!5e0!3m2!1ses-419!2sar!4v1723155953517!5m2!1ses-419!2sar" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
@@ -33,12 +33,12 @@ import Titulo from "./ui/Titulo.astro";
 <style>
     
     .form_control{
-        @apply flex  my-2;
+        @apply flex flex-col md:flex-row my-2;
         & label{
             @apply w-1/5;
         }
         & *:not(label){
-            @apply w-4/5 text-gray-950 px-2 py-1;
+            @apply md:w-4/5 text-gray-950 px-2 py-1;
         }
         & textarea{
             line-height: 1.5;
