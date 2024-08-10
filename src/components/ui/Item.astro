@@ -1,0 +1,43 @@
+---
+const {color1, colorBg, hora, tag, text} = Astro.props
+
+                //{cronograma.map(it =>(
+                //    <Item color1="" hora={it.hora} tag={it.tag} text={it.info}/>)
+                //)}
+---
+
+<li class="relative mb-6 sm:mb-0">
+    <div class="flex items-center ">
+        <div class="z-10 flex items-center justify-center w-6 h-6 bg-sec rounded-full ring-0 ring-white dark:bg-third sm:ring-8 dark:ring-gray-950 shrink-0">
+            <svg class:list={["w-2.5 h-2.5",{"text-fourth": color1 == 'fourth'}]} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+            </svg>
+        </div>
+        <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+    </div>
+    <div class="mt-3 sm:pe-8 bg-gray-800 rounded-lg mx-5 px-4 py-2"> 
+        <p>
+            <time class="mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{hora? hora : ' '}</time>
+            <span class:list={["tags",{"tag-exposicion": tag == 'exposición'}]}>{tag? tag : ' '}</span>
+        </p>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400 min-h-16">{text? text : ' '}</p>
+    </div>
+</li>
+
+<style>
+    .tags{
+        @apply border-2 border-transparent inline-flex py-1 px-2 rounded-full font-bold select-none
+    }
+    .tag-dialogo{
+        @apply border-green-400 text-green-500 bg-gray-800;
+    }
+    .tag-conferencia{
+        @apply border-fourth text-fourth bg-gray-800;
+    }
+    .tag-exposicion{
+        @apply border-red-400 text-red-500 bg-gray-800;
+    }
+    .tag-break{
+        @apply border-orange-400 text-orange-500 bg-gray-800;
+    }
+</style>

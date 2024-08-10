@@ -12,6 +12,31 @@ interface sponsor {
   img?: string;
 }
 
+interface item {
+  id: number;
+  info: string;
+  hora?: string;
+  tag?: string;
+}
+export const cronograma: item[] = [
+  {
+    id: 1,
+    info: "Acreditación",
+    hora: "09:00 am",
+  },
+  {
+    id: 2,
+    info: "Acreditación",
+    hora: "09:30 am",
+  },
+  {
+    id: 3,
+    info: "Acreditación",
+    hora: "09:00 am",
+    tag: "exposición",
+  },
+];
+
 export const directivos: members[] = [
   {
     id: 1,
